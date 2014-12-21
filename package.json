@@ -10,5 +10,24 @@
   "license": "MIT",
   "dependencies": {
     "moment": "^2.8.4"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rueckstiess/mongodb-log2ejson.git"
+  },
+  "keywords": [
+    "mongodb",
+    "log",
+    "parse",
+    "eJSON",
+    "JSON"
+  ],
+  "bugs": {
+    "url": "https://github.com/rueckstiess/mongodb-log2ejson/issues"
+  },
+  "homepage": "https://github.com/rueckstiess/mongodb-log2ejson"
 }
