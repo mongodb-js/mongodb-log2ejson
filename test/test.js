@@ -29,6 +29,12 @@ describe('mongodb-replace', function () {
     assert.equal(s, '{ regex: { "$regex": "foo", "$options": "gi" } }')
   });
 
+  it('should escape double quotes in RegEx', function () {
+    var s = mdb_replace('{ regex: /foo"bar/ }');
+    assert.equal(s, '{ regex: { "$regex": "foo\"bar", "$options": "" } }')
+  });
+
+
   it('should parse MaxKey', function () {
     var s = mdb_replace('{ val: MaxKey }')
     assert.equal(s, '{ val: { "$maxKey": 1 } }')

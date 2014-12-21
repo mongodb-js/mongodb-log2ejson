@@ -28,7 +28,14 @@ function replaceObjectId(str) {
 }
 
 function replaceRegEx(str) {
-  return str.replace(/\/(.+?)\/([a-z]{0,4})/g, '{ "$regex": "$1", "$options": "$2" }')
+  var regex = /\/(.+?)\/([gims]{0,4})/g;
+  var match;
+
+  while ((match = regex.exec(str)) !== null) {
+    var m1 = match[1].replace(/"/g, '\"');
+    str = str.replace(match[0], '{ "$regex": "'+ m1 +'", "$options": "'+ match[2] +'" }')
+  }
+  return str;
 }
 
 function replaceDate(str) {
