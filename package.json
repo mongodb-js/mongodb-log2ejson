@@ -1,6 +1,6 @@
 {
   "name": "mongodb-log2ejson",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "converts mongodb native types found in log files to ejson",
   "main": "index.js",
   "scripts": {
