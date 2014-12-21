@@ -32,7 +32,7 @@ function replaceRegEx(str) {
   var match;
 
   while ((match = regex.exec(str)) !== null) {
-    var m1 = match[1].replace(/"/g, '\"');
+    var m1 = match[1].replace(/"/g, '\\\"');
     str = str.replace(match[0], '{ "$regex": "'+ m1 +'", "$options": "'+ match[2] +'" }')
   }
   return str;

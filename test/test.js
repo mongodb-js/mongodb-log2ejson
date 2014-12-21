@@ -31,7 +31,7 @@ describe('mongodb-replace', function () {
 
   it('should escape double quotes in RegEx', function () {
     var s = mdb_replace('{ regex: /foo"bar/ }');
-    assert.equal(s, '{ regex: { "$regex": "foo\"bar", "$options": "" } }')
+    assert.equal(s, '{ regex: { "$regex": "foo\\\"bar", "$options": "" } }')
   });
 
 
