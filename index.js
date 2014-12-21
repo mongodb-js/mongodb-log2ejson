@@ -28,12 +28,12 @@ function replaceObjectId(str) {
 }
 
 function replaceRegEx(str) {
-  var regex = /\/(.+?)\/([gims]{0,4})/g;
+  var regex = /([,:]\s*)\/(.+?)\/([gims]{0,4})(\s+)/g;
   var match;
 
   while ((match = regex.exec(str)) !== null) {
-    var m1 = match[1].replace(/"/g, '\\\"');
-    str = str.replace(match[0], '{ "$regex": "'+ m1 +'", "$options": "'+ match[2] +'" }')
+    var m2 = match[2].replace(/"/g, '\\\"');
+    str = str.replace(match[0], match[1] + '{ "$regex": "'+ m2 +'", "$options": "'+ match[3] +'" }' + match[4])
   }
   return str;
 }

@@ -34,6 +34,20 @@ describe('mongodb-replace', function () {
     assert.equal(s, '{ regex: { "$regex": "foo\\\"bar", "$options": "" } }')
   });
 
+  it('should not confuse URLs with RegEx', function () {
+    var s = mdb_replace('{ url: "https://www.google.com/accounts/cd/id?abc=123" }');
+    assert.equal(s, '{ url: "https://www.google.com/accounts/cd/id?abc=123" }')
+  });
+
+  it('should handle RegEx with embedded URLs', function () {
+    var s = mdb_replace('{ url: /(?:^|\W)href="http:\/\/www\.google\.com\/indexes\/12345678\/0987654321a\/"/i }')
+    assert.equal(s, '{ url: { "$regex": "(?:^|\W)href=\\\"http:\/\/www\.google\.com\/indexes\/12345678\/0987654321a\/\\\"", "$options": "i" } }')
+  });
+  
+  it('should not confuse string paths with RegEx', function () {
+    var s = mdb_replace('{ path: "/local/mis" }');
+    assert.equal(s, '{ path: "/local/mis" }')
+  });
 
   it('should parse MaxKey', function () {
     var s = mdb_replace('{ val: MaxKey }')
