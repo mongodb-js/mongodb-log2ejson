@@ -2,22 +2,20 @@
   "name": "mongodb-log2ejson",
   "version": "0.1.3",
   "description": "converts mongodb native types found in log files to ejson",
-  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "author": "Thomas Rueckstiess",
+  "author": "Thomas mongodb-js",
   "license": "MIT",
   "dependencies": {
     "moment": "^2.8.4"
   },
-  "directories": {
-    "test": "test"
+  "devDependencies": {
+    "mocha": "^2.2.4"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/rueckstiess/mongodb-log2ejson.git"
+    "url": "https://github.com/mongodb-js/mongodb-log2ejson.git"
   },
   "keywords": [
     "mongodb",
@@ -27,7 +25,7 @@
     "JSON"
   ],
   "bugs": {
-    "url": "https://github.com/rueckstiess/mongodb-log2ejson/issues"
+    "url": "https://github.com/mongodb-js/mongodb-log2ejson/issues"
   },
-  "homepage": "https://github.com/rueckstiess/mongodb-log2ejson"
+  "homepage": "https://github.com/mongodb-js/mongodb-log2ejson"
 }
