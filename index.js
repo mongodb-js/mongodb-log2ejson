@@ -49,7 +49,7 @@ function replaceDate(str) {
 }
 
 function replaceBinData(str) {
-  return str.replace(/BinData\((\d+), ([0-9ABCDEF]+)\)/g, '{ "$binary": "$2", "$type": "$1" }');
+  return str.replace(/BinData\((\d+), ([0-9ABCDEF]+)(\.\.\.)?\)/g, '{ "$binary": "$2", "$type": "$1" }');
 }
 
 var replace = module.exports = function(str) {
